@@ -6,50 +6,49 @@
 /*   By: cshannon <cshannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 21:36:47 by cshannon          #+#    #+#             */
-/*   Updated: 2021/10/26 13:54:42 by cshannon         ###   ########.fr       */
+/*   Updated: 2021/10/26 17:56:32 by cshannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_num_len(int num)
+size_t	ft_len(int n)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
-	if (num <= 0)
-		len++;
-	while (num)
+	if (n <= 0)
+		len = 1;
+	while (n != 0)
 	{
-		num = num / 10;
 		len++;
+		n = n / 10;
 	}
 	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	size_t	len;
-	long	num;
-	char	*res;
+	unsigned int	num;
+	char			*res;
 
-	len = ft_num_len(n);
-	num = n;
-	if (!(res = malloc(sizeof(char) * len + 1)))
-		return (NULL);
-	if (num < 0)
+	num = ft_len(n);
+	res = (char *)malloc(sizeof(char) * (num + 1));
+	if (!res)
+		return (res);
+	if (n == 0)
 	{
-		res[0] = '-';
-		num = -num;
-	}
-	if (num == 0)
 		res[0] = '0';
-	res[len--] = '\0';
-	while (num)
+		res[1] = '\0';
+		return (res);
+	}
+	res[num] = '\0';
+	if (n < 0)
+		res[0] = '-';
+	while (n != 0)
 	{
-		res[len] = num % 10 + '0';
-		len--;
-		num = num / 10;
+		res[--num] = (n % 10) * (2 * (n > 0) - 1) + '0';
+		n = n / 10;
 	}
 	return (res);
 }

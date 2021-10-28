@@ -6,9 +6,16 @@
 /*   By: cshannon <cshannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 21:37:35 by cshannon          #+#    #+#             */
-/*   Updated: 2021/10/25 11:55:40 by cshannon         ###   ########.fr       */
+/*   Updated: 2021/10/26 20:44:25 by cshannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (!s || fd < 0)
+		return ;
+	write (fd, s, ft_strlen(s));
+	write (fd, "\n", 1);
+}

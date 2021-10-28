@@ -6,7 +6,7 @@
 /*   By: cshannon <cshannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 21:35:23 by cshannon          #+#    #+#             */
-/*   Updated: 2021/10/26 13:55:17 by cshannon         ###   ########.fr       */
+/*   Updated: 2021/10/26 17:59:33 by cshannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	x = 0;
 	if (!s || !f)
 		return (NULL);
-	if (!(res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!res)
 		return (NULL);
-	
+	while (s[x])
+	{
+		res[x] = f(x, s[x]);
+		x++;
+	}
+	res[x] = '\0';
+	return (res);
 }

@@ -6,9 +6,15 @@
 /*   By: cshannon <cshannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 21:37:06 by cshannon          #+#    #+#             */
-/*   Updated: 2021/10/25 11:55:35 by cshannon         ###   ########.fr       */
+/*   Updated: 2021/10/26 21:14:21 by cshannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	ft_putchar_fd(char c, int fd)
+{
+	if (fd < 0)
+		return ;
+	write (fd, &c, 1);
+}

@@ -6,7 +6,7 @@
 /*   By: cshannon <cshannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 14:34:35 by cshannon          #+#    #+#             */
-/*   Updated: 2021/10/24 13:57:13 by cshannon         ###   ########.fr       */
+/*   Updated: 2021/11/02 09:00:55 by cshannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	d = dst;
 	s = src;
+	if (dst == src)
+		return (dst);
 	if (d > s)
 	{
 		x = len;

@@ -6,7 +6,7 @@
 /*   By: cshannon <cshannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 18:13:48 by cshannon          #+#    #+#             */
-/*   Updated: 2021/10/24 19:44:44 by cshannon         ###   ########.fr       */
+/*   Updated: 2021/11/02 10:00:35 by cshannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
-	int	x;
+	int					res;
+	int					sign;
+	unsigned long int	x;
 
 	res = 0;
 	sign = 1;

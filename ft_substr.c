@@ -6,7 +6,7 @@
 /*   By: cshannon <cshannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:14:23 by cshannon          #+#    #+#             */
-/*   Updated: 2021/10/25 16:24:49 by cshannon         ###   ########.fr       */
+/*   Updated: 2021/11/02 09:50:07 by cshannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	x;
 	char			*str;
 
+	x = 0;
 	if (!s)
 		return ((char *)0);
-	x = 0;
 	while (s[x])
 		x++;
 	if (start > x)

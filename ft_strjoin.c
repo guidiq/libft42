@@ -6,7 +6,7 @@
 /*   By: cshannon <cshannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 21:36:00 by cshannon          #+#    #+#             */
-/*   Updated: 2021/10/25 16:56:11 by cshannon         ###   ########.fr       */
+/*   Updated: 2021/11/02 09:50:51 by cshannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	x = 0;
 	y = 0;
+	if (!s1 || !s2)
+		return ((char *)0);
 	str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return ((char *)0);
